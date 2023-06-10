@@ -38,7 +38,7 @@ export const SignUpForm: React.FC = () => {
         // }
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ user, pwd , email, fullname}),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
@@ -49,6 +49,8 @@ export const SignUpForm: React.FC = () => {
             //clear state and controlled inputs
             setUser('');
             setPwd('');
+            setEmail('');
+            setFullname('');
         } catch (err) {
             console.log(err);
             // errRef.current.innerHTML = err.response.data;
