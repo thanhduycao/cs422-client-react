@@ -43,7 +43,7 @@ export const LoginForm: React.FC = () => {
 
         try {
             const response = await axios.post(LOGIN_URL,
-                JSON.stringify({ user, pwd }),
+                JSON.stringify({ user, pwd, rememberMe}),
                 {
                     headers: { 'Content-Type': 'application/json' },
                     withCredentials: true
